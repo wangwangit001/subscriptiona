@@ -1,0 +1,12 @@
+name = "subscriptiona"
+main = "index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# KV 命名空间配置 - 部署时会自动创建
+[[kv_namespaces]]
+binding = "SUBSCRIPTIONS_KV"
+
+# 定时任务配置 - 每天早上8点检查即将到期的订阅
+[triggers]
+crons = ["0 8 * * *"]
